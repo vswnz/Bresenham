@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=BresenhamLine
+comment0.text=\r\n\ Does\ a\ line\ using\ Bresenham.\r\n\r\n\ @author\ Bill\ Viggers\r\n\ @version\ 5-May-22\r\n
+comment1.params=
+comment1.target=BresenhamLine()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Plot\r\n
+numComments=2
