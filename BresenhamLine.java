@@ -25,7 +25,8 @@ public class BresenhamLine
         int a = (two.getY()-one.getY())*2;
         int b = a - 2*(two.getX()-one.getX());
         int p = a-(two.getX()-one.getX());
-
+        int yStep=1;  // What do we adjust Y by for each move in X?
+        
         System.out.println("Calculating A is "+a+", B as "+b+"; and p as "+p);
         int y=one.getY();
         for (int x=one.getX();x<=two.getX();x++){
@@ -37,7 +38,7 @@ public class BresenhamLine
             if (p < 0) { //draw on same line
                 p+=a;
             } else{
-                y++;
+                y+=yStep;
                 p+=b;
             } // move up a line
 
