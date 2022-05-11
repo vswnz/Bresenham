@@ -8,7 +8,7 @@
 public class BresenhamLine
 {
     // instance variables - replace the example below with your own
-    final boolean VERBOSE=false;
+    final boolean VERBOSE=true;
 
     /**
      * Constructor for objects of class Plot
