@@ -6,6 +6,6 @@ comment1.target=BresenhamLine()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Plot\r\n
 comment2.params=plot
 comment2.target=BresenhamLine(boolean)
-comment3.params=one\ two\ plot
+comment3.params=start\ end\ plot
 comment3.target=void\ BLine(Coordinate,\ Coordinate,\ boolean)
 numComments=4

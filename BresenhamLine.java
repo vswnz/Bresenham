@@ -30,19 +30,21 @@ public class BresenhamLine
 
     Board myBoard = new Board();
 
-    public void BLine(Coordinate one, Coordinate two, boolean plot)
+    // we use coordinate.getX() to get the X value of a coordinate and 
+    // coordinate.getY() to get the Y value of a coordinate.
+    public void BLine(Coordinate start, Coordinate end, boolean plot)
     {
 
         // Parameters as defined byt Bresenham.
         // Yes the names are ugly names, but that is how they are defined.
-        int a = (two.getY()-one.getY())*2;
-        int b = a - 2*(two.getX()-one.getX());
-        int p = a-(two.getX()-one.getX());
+        int a = (end.getY()-start.getY())*2;
+        int b = a - 2*(end.getX()-start.getX());
+        int p = a-(end.getX()-start.getX());
         int yStep=1;  // What do we adjust Y by for each move in X?
 
         if (VERBOSE) System.out.println("Calculating A is "+a+", B as "+b+"; and p as "+p);
-        int y=one.getY();
-        for (int x=one.getX();x<=two.getX();x++){
+        int y=start.getY();
+        for (int x=start.getX();x<=end.getX();x++){
             if (VERBOSE){
                 System.out.print("p is now "+p);
                 System.out.println("; Plotting at "+x+","+y);
