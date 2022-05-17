@@ -1,10 +1,12 @@
 
 /**
  * Draw a pair of axis on the screen.  Then use it to draw a board.
+
  *
  * @author Bill
  * @version Jul 9th 2020
  * Updated May 4th 2022 to allow plotting of squares.
+ * Modified May 18th 2022  to draw two axis for Bresenham 0 column/row
  * 
  */
 
@@ -33,11 +35,18 @@ public class Board extends JFrame {
             //X axis
             Line2D lin = new Line2D.Float(10, wSize/2, wSize-10, wSize/2);
             g2.draw(lin);
+            // Add 2nd X axis for Bresenham 0 row
+            lin = new Line2D.Float(10, wSize/2-SQUARE, wSize-10, wSize/2-SQUARE);
+            g2.draw(lin);
+
             //Y axis; Starts 50 points further down due to title bar.
             lin = new Line2D.Float(wSize/2, 60, wSize/2, wSize-10);
             g2.draw(lin);
-        } // Display the axis
+            // add 2nd Y axis for Bresehman 0 column
+            lin = new Line2D.Float(wSize/2+SQUARE, 60, wSize/2+SQUARE, wSize-10);
+            g2.draw(lin);
 
+        } // Display the axis
         //Display any squares we want plotted.
         for (int x=0;x<IMAGESIZE;x++)
             for (int y=0; y<IMAGESIZE;y++){
@@ -49,7 +58,7 @@ public class Board extends JFrame {
                 } // if point should be plotted.
             } // for y
     } //paint
-    
+
     // Set the appropriate cooridate
     public void plot(Coordinate c){
         // We offset by CENTER as the coordinates can be negative.
@@ -70,7 +79,7 @@ public class Board extends JFrame {
     // This method sets up the basic frame we will use.
     public Board(){
         setTitle("Bresenham");  //Whateveryou want the window to be called.
-        
+
         this.getContentPane().setPreferredSize(new Dimension(wSize,wSize));  
         this.getContentPane().setLayout(null);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
